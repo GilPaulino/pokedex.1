@@ -1,0 +1,59 @@
+<section class="home">
+    <nav class="navbar">
+        <img class="logo" src="assets/images/pokemon_logo.svg">
+       
+        <button mat-icon-button class="btn-menu" [matMenuTriggerFor]="menu">
+            <mat-icon fontIcon="apps"></mat-icon>
+        </button>
+
+          <mat-menu #menu="matMenu">
+              <div class="container-menu ">
+                <button mat-menu-item class="btn-item-menu" [routerLink]="['/pokedex']">
+                    <mat-icon>dialpad</mat-icon>
+                    <span>Pokédex</span>
+                  </button>
+                  <button mat-menu-item class="btn-item-menu" disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Mochila</span>
+                  </button>
+                  <button mat-menu-item class="btn-item-menu" disabled>
+                    <mat-icon>notifications_off</mat-icon>
+                    <span>Habilidades</span>
+                  </button>
+                  <button mat-menu-item class="btn-item-menu" disabled>
+                    <mat-icon>voicemail</mat-icon>
+                    <span>Mochila</span>
+                  </button>
+                </div>
+          </mat-menu>
+    </nav>
+    <section class="hero">
+        <div class="info">
+            <h1>Gotta Catch 'Em All!</h1>
+            <p>Pokémon, also known as Pocket Monsters in Japan, is a Japanese media Franchise <br> manages by the Pokémon Company, a company founded by Nintendo</p>
+            <div class="mais-informacao">
+                <button>More information</button>
+            </div>
+            <div class="cards-container">
+
+                <mat-card class="cards-left cards">
+                    <mat-card-content>
+                        <img src="../../../assets/images/pokemon-go.png" alt="">
+                    </mat-card-content>
+                </mat-card>
+                
+                <mat-card class="cards-right cards">
+                    <mat-card-content>
+                        <img src="../../../assets/images/pokemon-card.jpg" alt="">
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+
+        </div>
+        <div class="img-hero">
+            <img src="assets/images/charizard.png">
+        </div>
+        <img class="bolinhas-container" src="assets/images/Frame_1.svg">
+    </section>
+</section>
