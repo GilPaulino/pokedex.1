@@ -1,20 +1,50 @@
 <section class="container-conteudo">
-    <nav class="navbar">
-        <img class="logo" src="assets/images/pokemon_logo.svg">
-    </nav>
+    
+        <mat-toolbar>
+            <img class="logo" src="assets/images/pokemon_logo.svg">
+            <ul>
+                <li><a [routerLink]="['']">Home</a></li>
+                <li><a [routerLink]="['/pokedex']" routerLinkActive="active">Pokédex</a></li>
+                <li><a>Itens</a></li>
+            </ul>            
+          </mat-toolbar>
+   
 
-    <section class="pokemon border">
-        <div class="input-pesquisar border">
-            <input matInput placeholder="Search your Pokémon!">
-            <button mat-button><img src="../../../assets/images/pokebola.png" alt=""></button>
+    <section class="container border">
+        <h1 class="titulo">Qual Pokémon você está procurando?</h1>
+
+        <div class="input-pesquisar">
+            <mat-icon>search</mat-icon>
+            <input matInput placeholder="Search your Pokémon!"> 
         </div>
 
-        lorem
+        <div class="ordernar-contador">
+            <span>Ordenar por</span>
+            <mat-form-field appearance="outline">
+                <mat-select>
+                  <mat-option *ngFor="let tipo of tiposOrdenacao" [value]="tipo.value">
+                    {{tipo.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            <span class="contador">10 de 150</span>
+        </div>
+
+       <section class="list-cards border">
+        <div class="card-pokemon">
+            <h3>Buba</h3>
+            <strong>#001</strong>
+            <span class="tag-type">Planta</span>
+            <span class="tag-type">Veneno</span>            
+            <img ngSrc="assets/images/buba.png">            
+        </div>
+       </section>
 
         <!-- <div class="informacao-pokemon border">            
                 <p class="id-pokemon">#609</p>
                 <p class="nome-pokemon">Chandelure</p>   
                 <p class="detalhes-pokemon">
+                    aaaaaaa
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto nulla architecto beatae libero natus, ex sit ut. Ut, suscipit possimus fugiat quo ab quisquam quaerat dignissimos tempore sit vel exercitationem dicta voluptas eos atque omnis, eveniet voluptate corporis? Officia adipisci modi tempora perferendis natus nesciunt accusamus, cumque voluptate ad consectetur eius laudantium cupiditate numquam quisquam tenetur officiis dolorum nemo ratione esse quod eaque architecto voluptatibus similique rerum! Sed veniam alias eveniet saepe? Facilis, voluptatem! Optio voluptatibus eius laudantium quam! Excepturi!
                 </p>  
 
@@ -23,7 +53,7 @@
 
                     <div class="card-esquerdo">
                         <mat-card class=" cards">
-                            <mat-card-content>
+                            <mat-card-content> 
                                 <img src="../../../assets/images/pokemon-go.png" alt="">
                             </mat-card-content>
                         </mat-card>
