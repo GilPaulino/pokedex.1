@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { NgOptimizedImage } from '@angular/common'
+import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
 @NgModule({
   declarations: [PokedexComponent],
   imports: [
@@ -24,7 +25,8 @@ import { NgOptimizedImage } from '@angular/common'
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    NavbarModule
   ],
   exports: [
     PokedexComponent

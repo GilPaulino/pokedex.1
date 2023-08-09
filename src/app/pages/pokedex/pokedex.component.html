@@ -1,14 +1,8 @@
-<section class="container-conteudo">
+<section class="container-conteudo">   
     
-        <mat-toolbar>
-            <img class="logo" src="assets/images/pokemon_logo.svg">
-            <ul>
-                <li><a [routerLink]="['']">Home</a></li>
-                <li><a [routerLink]="['/pokedex']" routerLinkActive="active">Pokédex</a></li>
-                <li><a>Itens</a></li>
-            </ul>            
-          </mat-toolbar>
-   
+   <app-navbar></app-navbar>
+
+    <router-outlet></router-outlet>
 
     <section class="container border">
         <h1 class="titulo">Qual Pokémon você está procurando?</h1>
@@ -31,58 +25,25 @@
         </div>
 
        <section class="list-cards border">
-        <div class="card-pokemon">
-            <h3>Buba</h3>
-            <strong>#001</strong>
-            <span class="tag-type">Planta</span>
-            <span class="tag-type">Veneno</span>            
-            <img ngSrc="assets/images/buba.png">            
+
+        <div class="card-pokemon" *ngFor="let pokemon of resultadoRequisicao" [style.background-color]="colors[pokemon.tipos[0]]">
+            <h3>{{pokemon.nome}}</h3>
+
+            <strong>{{pokemon.id}}</strong>
+
+            <span class="tag-type" *ngFor="let tipo of pokemon.tipos">
+                <mat-icon>home</mat-icon>     
+                {{tipo}}           
+            </span>                         
+            <img class="pokemon" [src]="pokemon.img"> 
+
+            <img class="pokebola" src="assets/images/backgroud-pokebola.png"> 
+
         </div>
-       </section>
 
-        <!-- <div class="informacao-pokemon border">            
-                <p class="id-pokemon">#609</p>
-                <p class="nome-pokemon">Chandelure</p>   
-                <p class="detalhes-pokemon">
-                    aaaaaaa
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto nulla architecto beatae libero natus, ex sit ut. Ut, suscipit possimus fugiat quo ab quisquam quaerat dignissimos tempore sit vel exercitationem dicta voluptas eos atque omnis, eveniet voluptate corporis? Officia adipisci modi tempora perferendis natus nesciunt accusamus, cumque voluptate ad consectetur eius laudantium cupiditate numquam quisquam tenetur officiis dolorum nemo ratione esse quod eaque architecto voluptatibus similique rerum! Sed veniam alias eveniet saepe? Facilis, voluptatem! Optio voluptatibus eius laudantium quam! Excepturi!
-                </p>  
-
-                <p>Melhores aparições</p> 
-                <div class="cards-container">
-
-                    <div class="card-esquerdo">
-                        <mat-card class=" cards">
-                            <mat-card-content> 
-                                <img src="../../../assets/images/pokemon-go.png" alt="">
-                            </mat-card-content>
-                        </mat-card>
-                        
-                        <mat-card class="cards">
-                            <mat-card-content>
-                                <img src="../../../assets/images/pokemon-card.jpg" alt="">
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-                    
-
-                    <div class="card-direito">
-                        <mat-card class="cards">
-                            <mat-card-content>
-                                <img src="../../../assets/images/pokemon-go.png" alt="">
-                            </mat-card-content>
-                        </mat-card>
-                        
-                        <mat-card class="cards">
-                            <mat-card-content>
-                                <img src="../../../assets/images/pokemon-card.jpg" alt="">
-                            </mat-card-content>
-                        </mat-card>
-                    </div>
-
-    
-                </div>
-        </div> -->
+       </section>        
     </section>
+
+
 </section>
 <router-outlet></router-outlet>

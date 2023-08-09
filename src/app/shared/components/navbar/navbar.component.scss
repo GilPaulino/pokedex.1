@@ -1,0 +1,25 @@
+.logo {
+    height: 50px;
+}
+
+mat-toolbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    ul{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        list-style: none;
+        
+        a {
+            text-decoration: none;
+            
+            &.active {
+                color:green;
+            }
+        }
+    }    
+}
