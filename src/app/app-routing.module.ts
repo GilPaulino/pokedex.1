@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PokedexComponent } from './pages/pokedex/pokedex.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
@@ -12,6 +11,10 @@ const routes: Routes = [
     path: 'pokedex',
     loadChildren: () =>
       import('./pages/pokedex/pokedex.module').then((m) => m.PokedexModule),
+  },
+  {
+    path: '**',
+    component: HomeComponent
   },
 ];
 

@@ -1,49 +1,6 @@
-<section class="container-conteudo">   
-    
+<section class="container-pokedex">      
+
    <app-navbar></app-navbar>
-
-    <router-outlet></router-outlet>
-
-    <section class="container border">
-        <h1 class="titulo">Qual Pokémon você está procurando?</h1>
-
-        <div class="input-pesquisar">
-            <mat-icon>search</mat-icon>
-            <input matInput placeholder="Search your Pokémon!"> 
-        </div>
-
-        <div class="ordernar-contador">
-            <span>Ordenar por</span>
-            <mat-form-field appearance="outline">
-                <mat-select>
-                  <mat-option *ngFor="let tipo of tiposOrdenacao" [value]="tipo.value">
-                    {{tipo.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            <span class="contador">10 de 150</span>
-        </div>
-
-       <section class="list-cards border">
-
-        <div class="card-pokemon" *ngFor="let pokemon of resultadoRequisicao" [style.background-color]="colors[pokemon.tipos[0]]">
-            <h3>{{pokemon.nome}}</h3>
-
-            <strong>{{pokemon.id}}</strong>
-
-            <span class="tag-type" *ngFor="let tipo of pokemon.tipos">
-                <mat-icon>home</mat-icon>     
-                {{tipo}}           
-            </span>                         
-            <img class="pokemon" [src]="pokemon.img"> 
-
-            <img class="pokebola" src="assets/images/backgroud-pokebola.png"> 
-
-        </div>
-
-       </section>        
-    </section>
-
-
+   <router-outlet></router-outlet>
+   
 </section>
-<router-outlet></router-outlet>

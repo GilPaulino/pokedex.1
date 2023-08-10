@@ -1,0 +1,53 @@
+<section class="container-detalhes">
+    <section class="container-nome-descricao">
+        <span class="botao-voltar" [routerLink]="['/pokedex']">
+            <mat-icon>home</mat-icon>
+            Voltar       
+        </span>
+        <div>
+            <strong>{{pokemon.id}}</strong>
+            <h1>{{pokemon.nome}}</h1>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur quibusdam porro repudiandae rerum. Impedit explicabo cupiditate magnam accusantium vitae asperiores in, blanditiis, illum nisi ab alias expedita at amet culpa omnis nobis sapiente, optio eaque reiciendis! Distinctio culpa veritatis velit?optio eaque reiciendis! Distinctio culpa veritatis velit?optio eaque reiciendis! Distinctio culpa veritatis velit?</span>
+        </div>
+                
+    </section>
+           
+    <section class="container-pokemon">
+        <img class="pokemon" src="assets/images/buba.png">
+        <img class="pokebola" src="assets/images/backgroud-pokebola.png">
+    </section>
+
+    <section class="container-tipo-fraquezas">
+        <div class="tipos">
+        <h1>Tipo</h1>
+
+            <span class="tag-type"
+                  *ngFor="let tipo of pokemon.tipos"
+                  [style.background-color]="colors[tipo]">
+                <mat-icon>home</mat-icon>
+                {{tipo}}          
+            </span>             
+        </div>        
+
+        <div class="fraquezas">
+            <h1>Fraquezas</h1>
+            <span class="tag-fraqueza" 
+                  *ngFor="let fraqueza of pokemon.fraquezas"
+                  [style.background-color]="colors[fraqueza]">
+                <mat-icon>home</mat-icon>
+                {{fraqueza}}            
+            </span>
+        </div>
+
+        <div class="status-pokemon">            
+            <span>HP: 120</span>
+            <div class="barra-principal"><div class="barra-vida"></div></div>
+            <span>SP: 65</span>
+            <div class="barra-principal"><div class="barra-sp"></div></div>
+            <span>ATK: 62</span>
+            <div class="barra-principal"><div class="barra-atk"></div></div>
+            <span>DEF: 88</span>
+            <div class="barra-principal"><div class="barra-def"></div></div>
+        </div>
+    </section>
+</section>

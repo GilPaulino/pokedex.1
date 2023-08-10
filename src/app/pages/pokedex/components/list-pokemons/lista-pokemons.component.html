@@ -1,0 +1,46 @@
+<section class="container-lista">
+        <h1 class="titulo">Qual Pokémon você está procurando?</h1>
+
+        <div class="input-pesquisar">
+            <mat-icon>search</mat-icon>
+            <input [(ngModel)]="valorDigitado"
+                   (ngModelChange)="filtrarPokemons()"
+                   matInput placeholder="Search your Pokémon!"
+                   type="text"> 
+        </div>
+
+        <div class="ordernar-contador">
+            <span>Ordenar por</span>
+            <!-- <mat-form-field appearance="outline">
+                <mat-select>
+                  <mat-option *ngFor="let tipo of tiposOrdenacao" [value]="tipo.value">
+                    {{tipo.viewValue}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field> -->
+            <span class="contador">10 de 150</span>
+        </div>
+
+       <section class="list-cards">
+
+        <div class="card-pokemon"
+             *ngFor="let pokemon of pokemonsFiltrados"
+             [style.background-color]="colors[pokemon.tipos[0]]"
+             [routerLink]="['details', pokemon.nome]"
+             [queryParams]="{  nome: pokemon.nome, id: pokemon.id, tipos: pokemon.tipos, img: pokemon.img }">
+            <h3>{{pokemon.nome}}</h3>
+
+            <strong>{{pokemon.id}}</strong>
+
+            <span class="tag-type" *ngFor="let tipo of pokemon.tipos">
+                <mat-icon>home</mat-icon>     
+                {{tipo}}           
+            </span>                         
+            <img class="pokemon" [src]="pokemon.img" alt="{{ pokemon.nome }}"> 
+
+            <img class="pokebola" src="assets/images/backgroud-pokebola.png"> 
+
+        </div>
+
+       </section>   
+    </section>

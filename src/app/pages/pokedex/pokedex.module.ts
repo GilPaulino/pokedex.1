@@ -12,8 +12,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { NgOptimizedImage } from '@angular/common'
 import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
+import { ListaPokemonComponent } from './components/list-pokemons/lista-pokemon.component';
+import { DetalhesPokemonModule } from './components/details-pokemons/detalhes-pokemon.module';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [PokedexComponent],
+  declarations: [PokedexComponent, ListaPokemonComponent],
   imports: [
     CommonModule,
     PokedexRoutingModule,
@@ -26,7 +30,9 @@ import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
     MatFormFieldModule,
     MatSelectModule,
     NgOptimizedImage,
-    NavbarModule
+    NavbarModule,
+    DetalhesPokemonModule,
+    FormsModule
   ],
   exports: [
     PokedexComponent

@@ -1,0 +1,114 @@
+.container-detalhes{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;    
+    flex: 1;
+    padding: 1rem 2rem;
+}
+
+.container-nome-descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 1rem;    
+    max-width: 25%;
+    min-width: 25%;
+    gap: 2rem;
+
+    .botao-voltar{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;       
+        gap: .5rem; 
+        border-radius: 1rem;
+        padding: .25rem 1rem;
+        color: black;
+    }    
+}
+
+.container-pokemon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    min-width: 50%;
+    width: 50%;
+    img{
+        width: 550px;
+        height: 550px;
+    }
+
+    .pokebola {
+        position: absolute;
+        z-index: 0;
+        transform: rotate(20deg);
+    }
+
+    .pokemon {
+        position: relative;
+        z-index: 1;
+    }    
+}
+
+.container-tipo-fraquezas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+    min-width: 25%;
+    max-width: 28%;
+    gap: .5rem;
+    padding: 1rem 1rem;   
+
+    .tipos, .fraquezas{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    .tag-type, .tag-fraqueza {        
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;       
+        gap: .5rem; 
+        background: rgba(209, 209, 209, 0.3);
+        border-radius: 1rem;
+        padding: .25rem 1rem;
+        color: white;
+        backdrop-filter: blur(4px);
+        z-index: 1;
+        width: 50%;
+        color: black;
+    }
+    .tag-fraqueza{
+        width: 50%;
+    }
+    .status-pokemon{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        .barra-principal{
+            width: 90%;
+            background: gray;
+            border-radius: 3px;
+            div{
+                background: black;
+                height: 6px;
+                border-radius: 3px;
+            }
+        }
+        .barra-vida{
+            width: 100%;            
+        }
+        .barra-sp{
+            width: 65%;
+        }
+        .barra-atk{
+            width: 62%;
+        }
+        .barra-def{
+            width: 88%;
+        }
+    }
+}
