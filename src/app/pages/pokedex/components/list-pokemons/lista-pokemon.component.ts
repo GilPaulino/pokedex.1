@@ -43,7 +43,7 @@ interface IOrdenacao {
       img: 'assets/images/buba.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Bulbasauro',
       id: '004',
       tipos: ['Water', 'Poison'],
       img: 'assets/images/charizard.png'
@@ -55,7 +55,7 @@ interface IOrdenacao {
       img: 'assets/images/buba.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Bulbasauro',
       id: '004',
       tipos: ['Water', 'Poison'],
       img: 'assets/images/charizard.png'
@@ -67,19 +67,19 @@ interface IOrdenacao {
       img: 'assets/images/buba.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Charizard',
       id: '006',
       tipos: ['Poison', 'Poison'],
       img: 'assets/images/charizard.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Bulbasauro',
       id: '007',
       tipos: ['Poison', 'Poison'],
       img: 'assets/images/buba.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Charizard',
       id: '008',
       tipos: ['Fire', 'Poison'],
       img: 'assets/images/buba.png'
@@ -91,13 +91,13 @@ interface IOrdenacao {
       img: 'assets/images/charizard.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Bulbasauro',
       id: '010',
       tipos: ['Eletric', 'Poison'],
       img: 'assets/images/buba.png'
     },
     {
-      nome: 'Squirtle',
+      nome: 'Charizard',
       id: '011',
       tipos: ['Fire', 'Poison'],
       img: 'assets/images/charizard.png'
