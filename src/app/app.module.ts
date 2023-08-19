@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PokedexModule } from './pages/pokedex/pokedex.module';
 import { HomeModule } from './pages/home/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     PokedexModule,
     HomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { NgModule } from "@angular/core";
 import { DetalhesPokemonRoutingModule } from "./detalhes-pokemon-routing.module";
 import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
   declarations: [DetalhesPokemonComponent],
@@ -11,8 +12,8 @@ import { MatIconModule } from "@angular/material/icon";
     CommonModule,
     DetalhesPokemonRoutingModule,
     RouterModule,
-    MatIconModule
-    
+    MatIconModule,
+    MatButtonModule,
   ],
   exports: [
     DetalhesPokemonComponent

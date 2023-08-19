@@ -1,42 +1,48 @@
-<section class="container-detalhes">
+<button mat-button class="botao-voltar" [routerLink]="['/pokedex']">
+    <mat-icon>arrow_back</mat-icon>
+    Voltar
+</button>
+
+<section class="container-detalhes" *ngIf="pokemon">
     <section class="container-nome-descricao">
-        <span class="botao-voltar" [routerLink]="['/pokedex']">
-            <mat-icon>home</mat-icon>
-            Voltar       
-        </span>
+        
         <div>
-            <strong>{{pokemon.id}}</strong>
-            <h1>{{pokemon.nome}}</h1>
+            <strong>#{{pokemon.id}}</strong>
+            <h1>{{pokemon.name}}</h1>
             <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur quibusdam porro repudiandae rerum. Impedit explicabo cupiditate magnam accusantium vitae asperiores in, blanditiis, illum nisi ab alias expedita at amet culpa omnis nobis sapiente, optio eaque reiciendis! Distinctio culpa veritatis velit?optio eaque reiciendis! Distinctio culpa veritatis velit?optio eaque reiciendis! Distinctio culpa veritatis velit?</span>
         </div>
                 
     </section>
            
     <section class="container-pokemon">
-        <img class="pokemon" src="assets/images/buba.png">
+        <img class="pokemon" src="{{pokemon.sprites?.front_default}}" alt="{{pokemon.name}}">
         <img class="pokebola" src="assets/images/backgroud-pokebola.png">
     </section>
 
     <section class="container-tipo-fraquezas">
         <div class="tipos">
-        <h1>Tipo</h1>
 
-            <span class="tag-type"
-                  *ngFor="let tipo of pokemon.tipos"
-                  [style.background-color]="colors[tipo]">
-                <mat-icon>home</mat-icon>
-                {{tipo}}          
-            </span>             
+        <h1>Tipo</h1>
+            <span
+            class="tag-type"
+                *ngFor="let tipo of pokemon.types"
+                [style.background-color]="colors[tipo.type.name]">
+                <img class="icones-tipos" [src]="tiposPokemon[tipo.type.name]" alt="{{tipo.type.name}}">
+                {{tipo.type.name}}
+            </span> 
         </div>        
 
         <div class="fraquezas">
             <h1>Fraquezas</h1>
-            <span class="tag-fraqueza" 
-                  *ngFor="let fraqueza of pokemon.fraquezas"
-                  [style.background-color]="colors[fraqueza]">
-                <mat-icon>home</mat-icon>
-                {{fraqueza}}            
-            </span>
+            <div class="container-tag">
+                <span class="tag-fraqueza" 
+                      *ngFor="let fraqueza of pokemon.types">
+                      <img class="icones-fraquezas"
+                      [src]="tiposPokemon[fraqueza.type.name]" alt="{{fraqueza.type.name}}"
+                      [style]="'--cor:' + colors[fraqueza.type.name]">
+                    <span>2x</span>           
+                </span>
+            </div>
         </div>
 
         <div class="status-pokemon">            

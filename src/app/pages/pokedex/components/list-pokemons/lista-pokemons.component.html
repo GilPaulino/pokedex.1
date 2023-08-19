@@ -18,7 +18,7 @@
                   </mat-option>
                 </mat-select>
             </mat-form-field> -->
-            <span class="contador">10 de 150</span>
+            <span class="contador">{{pokemonsFiltrados.length}} de {{resultadoRequisicao.length}}</span>
         </div>
 
        <section class="list-cards">
@@ -26,17 +26,16 @@
         <div class="card-pokemon"
              *ngFor="let pokemon of pokemonsFiltrados"
              [style.background-color]="colors[pokemon.tipos[0]]"
-             [routerLink]="['details', pokemon.nome]"
-             [queryParams]="{  nome: pokemon.nome, id: pokemon.id, tipos: pokemon.tipos, img: pokemon.img }">
+             [routerLink]="['details', pokemon.nome]">
             <h3>{{pokemon.nome}}</h3>
 
-            <strong>{{pokemon.id}}</strong>
+            <strong>#{{pokemon.id}}</strong>
 
             <span class="tag-type" *ngFor="let tipo of pokemon.tipos">
-                <mat-icon>home</mat-icon>     
+                <img class="icones-tipos" [src]="tiposPokemon[tipo]" alt="{{tipo}}">     
                 {{tipo}}           
             </span>                         
-            <img class="pokemon" [src]="pokemon.img" alt="{{ pokemon.nome }}"> 
+            <img class="pokemon" src="https://projectpokemon.org/images/normal-sprite/{{ pokemon.nome }}.gif" alt="{{ pokemon.nome }}"> 
 
             <img class="pokebola" src="assets/images/backgroud-pokebola.png"> 
 

@@ -1,31 +1,34 @@
+
+:host {
+    padding: 1rem 2rem;
+}
+
 .container-detalhes{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;    
     flex: 1;
-    padding: 1rem 2rem;
 }
 
 .container-nome-descricao{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 1rem 1rem;    
+    justify-content: flex-start;
+    padding: .5rem;
     max-width: 25%;
     min-width: 25%;
     gap: 2rem;
+    h1::first-letter {
+        text-transform: uppercase;
+    }
 
-    .botao-voltar{
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;       
-        gap: .5rem; 
-        border-radius: 1rem;
-        padding: .25rem 1rem;
-        color: black;
-    }    
 }
+.botao-voltar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}    
 
 .container-pokemon{
     display: flex;
@@ -35,13 +38,14 @@
     min-width: 50%;
     width: 50%;
     img{
-        width: 550px;
-        height: 550px;
+        width: 500px;
+        height: 500px;
     }
 
     .pokebola {
         position: absolute;
         z-index: 0;
+        filter: contrast(70%);
         transform: rotate(20deg);
     }
 
@@ -54,12 +58,12 @@
 .container-tipo-fraquezas{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start ;
     width: 25%;
     min-width: 25%;
     max-width: 28%;
-    gap: .5rem;
-    padding: 1rem 1rem;   
+    gap: .5rem;   
+    padding: .5rem;
 
     .tipos, .fraquezas{
         display: flex;
@@ -67,22 +71,24 @@
         gap: .5rem;
     }
 
-    .tag-type, .tag-fraqueza {        
+    .tag-type {        
         display: flex;
         align-items: center;
         justify-content: flex-start;       
         gap: .5rem; 
-        background: rgba(209, 209, 209, 0.3);
         border-radius: 1rem;
         padding: .25rem 1rem;
         color: white;
-        backdrop-filter: blur(4px);
-        z-index: 1;
         width: 50%;
-        color: black;
     }
     .tag-fraqueza{
-        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background: rgb(227, 227, 227);
+        border-radius: 1rem;        
+        padding: .25rem 1rem .25rem 0;
+        gap: 1rem;
     }
     .status-pokemon{
         display: flex;
@@ -111,4 +117,24 @@
             width: 88%;
         }
     }
+}
+.container-tag{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.icones-fraquezas{
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--cor);
+    box-shadow: 0px 0px 8px 0px var(--cor);
+    padding: .25rem;
+    border-radius: 50%;
+    transform: scale(1.5);
+}
+
+.icones-tipos{
+    width: 1.5rem;
+    height: 1.5rem;
 }

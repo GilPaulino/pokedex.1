@@ -15,6 +15,7 @@ import { NavbarModule } from 'src/app/shared/components/navbar/navbar.module';
 import { ListaPokemonComponent } from './components/list-pokemons/lista-pokemon.component';
 import { DetalhesPokemonModule } from './components/details-pokemons/detalhes-pokemon.module';
 import { FormsModule } from '@angular/forms';
+import { PokemonService } from './components/list-pokemons/lista-pokemon.service';
 
 @NgModule({
   declarations: [PokedexComponent, ListaPokemonComponent],
@@ -36,6 +37,6 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     PokedexComponent
-  ]
+  ],
 })
 export class PokedexModule { }

@@ -13,6 +13,11 @@ const routes: Routes = [
       import('./pages/pokedex/pokedex.module').then((m) => m.PokedexModule),
   },
   {
+    path: 'mini-game',
+    loadChildren: () =>
+      import('./pages/mini-game/mini-game.module').then((m) => m.MiniGameModule),
+  },
+  {
     path: '**',
     component: HomeComponent
   },
